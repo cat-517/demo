@@ -1,0 +1,89 @@
+<!--pages/news/arms/arms-comment/arms-comment.wxml-->
+<view class="comment-detail-box">
+  <view class="comment-main-box">
+    <view class="comment-title">此新闻评论共{{comments.length}}条:</view>
+    <block wx:for="{{comments}}" wx:for-item="item" wx:for-index="idx">
+      <view class="comment-item">
+        <view class="comment-item-header">
+          <view class="left-img">
+            <image src="{{item.avatar}}"></image>
+          </view>
+          <view class="right-user">
+            <text class="user-name">{{item.username}}</text>
+          </view>
+          <view class="right-img" catchtap="delComment" data-idx="{{idx}}">
+            <image src="{{image1}}"></image>
+          </view>
+        </view>
+        <view class="comment-body">
+          <view class="comment-txt" wx:if="{{item.content.txt}}">
+            <text>{{item.content.txt}}</text>
+          </view>
+          <view class="comment-voice" wx:if="{{item.content.audio && item.content.audio.url}}">
+            <view data-url="{{item.content.audio.url}}" class="comment-voice-item" catchtap="playAudio">
+              <image src="/images/comment/voice.png" class="voice-play"></image>
+              <text>{{item.content.audio.timeLen}}</text>
+            </view>
+          </view>
+          <view class="comment-img" wx:if="{{item.content.img.length!=0}}">
+            <block wx:for="{{item.content.img}}" wx:for-item="img">
+              <image src="{{img}}" mode="aspectFill" catchtap="previewImg" data-comment-idx="{{idx}}" data-img-idx="img"></image>
+            </block>
+          </view>
+        </view>
+        <view class="comment-time">{{item.create_time}}</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="input-box">
+    <view class="send-msg-box">
+      <view hidden="{{useKeyboardFlag}}" class="input-item">
+        <image src="/images/comment/keyboard.png" class="comment-icon keyboard-icon" catchtap="switchInputType"></image>
+        <input class="input speak-input{{recodingClass}}" value="按住说话" disabled="disabled" catchtouchstart="recordStart" catchtouchend="recordEnd"></input>
+      </view>
+      <view hidden="{{!useKeyboardFlag}}" class="input-item">
+        <image class="comment-icon speak-icon" src="/images/comment/speak.png" catchtap="switchInputType"></image>
+        <input class="input keyboard-input" placeholder="说点什么吧...." bindinput="bindCommentInput" bindconfirm="submitComment" value="{{keyboardInputValue}}"></input>
+      </view>
+      <image class="comment-icon add-icon" src="/images/comment/bq.png" catchtap="sendMoreEmoji"></image>
+      <view hidden="{{!val}}" class="submit-btn" catchtap="submitComment">发送</view>
+      <image hidden="{{val}}" class="comment-icon add-icon" src="/images/comment/add.png" catchtap="sendMoreMsg"></image>
+    </view>
+
+    <view class="send-more-box" hidden="{{!sendMoreMsgFlag}}">
+      <view class="send-more-btns-main">
+        <view class="more-btn-item" catchtap="chooseImage" data-category="album">
+          <view class="more-btn-main">
+            <image src="/images/comment/upload_image.png"></image>
+          </view>
+          <text>照片</text>
+        </view>
+        <view class="more-btn-item" catchtap="chooseImage" data-category="camera">
+          <view class="more-btn-main">
+            <image src="/images/comment/camera.png"></image>
+          </view>
+          <text>拍照</text>
+        </view>
+      </view>
+
+      <view class="send-more-result-main" hidden="{{chooseFiles.length==0}}">
+        <block wx:for="{{chooseFiles}}" wx:for-index="idx">
+          <view class="file-box {{deleteIndex==idx?'deleting':''}}">
+            <view class="img-box">
+              <image src="{{item}}" mode="aspectFill"></image>
+              <icon class="remove-icon" type="cancel" size="23" color="#B2B2B2" catchtap="deleteImage" data-idx="{{idx}}"></icon>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <view class="send-more-box" hidden="{{!sendMoreEmojiFlag}}">
+      <block wx:for="{{emChar}}" wx:for-item="item" wx:for-index="idx">
+        <text class="emoji" catchtap="emojiChoose" data-id="{{idx}}">{{item}}</text>
+      </block>
+    </view>
+
+  </view>
+</view>

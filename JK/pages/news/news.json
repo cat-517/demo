@@ -1,0 +1,7 @@
+{
+  "usingComponents":{
+    "w-back-top": "/components/w-back-top/w-back-top"
+  },
+  "navigationBarTitleText":"东方头条新闻",
+  "navigationBarBackgroundColor": "#e63535"
+}

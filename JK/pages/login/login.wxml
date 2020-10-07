@@ -1,0 +1,25 @@
+<!--pages/login/login.wxml-->
+<view class="login-all">
+  <view class="name-group">
+    <image src="{{userlogin}}"></image>
+    <input class="name" placeholder-class="name-input" placeholder="请输入账户" bindinput="getUname" value="{{keyName}}"></input> 
+    <image src="{{qc}}" catchtap="onClearTap"></image>
+  </view>
+  <view class="word-group">
+    <image src="{{passlogin}}"></image>
+    <input class="word" placeholder-class="word-input" placeholder="请输入密码" bindinput="getUword" password="{{isShow}}" value="{{keyWord}}"></input>
+    <image src="{{xs}}" catchtap="onShowTap" class="xs"></image>
+  </view>
+  <view class="word-group">
+    <image src="{{passlogin}}"></image>
+    <input class="word" placeholder-class="word-input" placeholder="请确认密码" bindinput="getUword1" password="{{isShow1}}" value="{{keyWord}}"></input>
+    <image src="{{xs}}" catchtap="onShowTap1" class="xs"></image>
+  </view>
+  <view catchtap="onLogin" class="journey-container">
+    <text class="journey">{{title1}}</text>
+  </view>
+  <view catchtap="onMain" class="journey-container">
+    <text class="journey">{{title2}}</text>
+  </view>
+</view>
+

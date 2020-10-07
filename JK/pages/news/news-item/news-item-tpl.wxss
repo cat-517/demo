@@ -1,0 +1,68 @@
+.news-middle1{
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1.5px solid #e9e9e9;
+}
+.news-title1{
+  margin: 10rpx 5rpx 10rpx 5rpx;
+  letter-spacing: 2rpx;  /*文字间间隔*/
+}
+.news-images{
+  display: flex;
+  flex-direction: row;
+  height: 200rpx;
+  margin: 0 10rpx 0 10rpx;
+}
+.news-images image{
+  height: 200rpx;
+}
+.news-title2{
+  display: flex;
+  flex-direction: row;
+  margin-top: 15rpx;
+  margin-left: 5rpx;
+  margin-bottom: 15rpx;
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+}
+.title{
+  color: red;
+  margin-right: 15rpx;
+}
+.tool-item{
+  margin-left: 15rpx;
+}
+.news-middle2{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1.5px solid #e9e9e9;
+}
+.news-hanzi{
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 2rpx;
+}
+.title1{
+  margin-top: 10rpx;
+  margin-bottom: 80rpx;
+  margin-left: 10rpx;
+}
+.news-low{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+}
+.title2{
+  margin-left: 5rpx;
+  margin-right: 15rpx;
+  color: blue;
+}
+.news-images1 image{
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-right: 15rpx;
+  width: 250rpx;
+  height: 220rpx;
+}

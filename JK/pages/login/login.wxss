@@ -1,0 +1,60 @@
+/* pages/login/login.wxss */
+.login-all{
+  display: flex;
+  flex-direction: column;
+  align-items: center  /*水平居中*/
+}
+.name-group{
+  display: flex;
+  flex-direction: row;
+  margin-top: 150rpx;
+  margin-bottom: 70rpx; /*距下端距离*/
+  border-bottom: solid 1px black;  /*设置下边框样式，solid为实线，1px为线的粗细*/
+}
+.name-group image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.name-group .name{
+  border: none;  /*不设置边框*/
+  width: 185px;  /*下边框的长度*/
+  text-align: center;  /*垂直居中*/
+}
+.name-group .name-input{
+  color: black;
+  margin-right: 40px;
+}
+.word-group{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 70rpx;
+  border-bottom: solid 1px black;
+}
+.word-group image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.word-group .word{
+  border: none;
+  width: 185px;
+  text-align: center;  /*垂直居中*/
+}
+.word-group .word-input{
+  color: black;
+}
+.xs{
+  transform:scale(1.1);
+}
+.journey-container{
+  border: 1px solid black;  /*设置边框粗细为1px，白色实线*/
+  width: 180px;   
+  height: 80rpx;
+  border-radius: 20px;  /*圆角矩形弯曲程度*/
+  text-align: center;
+  margin-bottom: 40rpx;
+  margin-top: 30rpx;
+}
+.journey{
+  line-height: 80rpx;  /*字体样式在矩形框中的位置*/
+  color: black;
+}

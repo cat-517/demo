@@ -1,0 +1,34 @@
+<template name="newsTpl1">
+  <view class="news-middle1">
+    <text class="news-title1">{{title}}</text>
+    <view class="news-images">
+      <image src="{{images1}}"></image>
+      <image src="{{images2}}"></image>
+      <image src="{{images3}}"></image>
+    </view>
+    <view class="news-title2">
+      <text class="title">{{title1}}</text>
+      <text>{{title2}}</text>
+      <view class="tool-item">
+            <text>{{readingNum}}阅读</text>
+      </view>
+    </view>
+  </view>
+</template>
+<template name="newsTpl2">
+  <view class="news-middle2">
+      <view class="news-hanzi">
+        <text class="title1">{{title}}</text>
+        <view class="news-low">
+          <text class="title2">{{title1}}</text>
+          <text>{{title2}}</text>
+          <view class="tool-item">
+            <text>{{readingNum}}阅读</text>
+          </view>
+        </view>
+      </view>
+      <view class="news-images1">
+        <image src="{{images1}}"></image>
+      </view>
+  </view>
+</template>

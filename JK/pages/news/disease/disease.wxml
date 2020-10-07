@@ -1,0 +1,47 @@
+<!--pages/disease/disease.wxml-->
+<import src="../news-item/news-item-tpl.wxml" />
+<view class="news-all">
+  <view class="news-head">
+    <view class="arms" catchtap="onArmsTap">
+      <text>{{arms}}</text>
+    </view>
+    <view class="disease" catchtap="onDiseaseTap">
+      <text>{{disease}}</text>
+    </view>
+    <view class="fun" catchtap="onFunTap">
+      <text>{{fun}}</text>
+    </view>
+    <view class="sport" catchtap="onSportTap">
+      <text>{{sport}}</text>
+    </view>
+  </view>
+  <view>
+    <swiper indicator-dots="true" autoplay="true" indicator-color="4000" circular="true" catchtap="onSwiperTap">
+      <swiper-item>
+        <image src="{{image1}}" data-news-id='3'></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="{{image2}}" data-news-id='6'></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="{{image3}}" data-news-id='4'></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="{{image4}}" data-news-id='1'></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <block wx:for="{{newsList}}" wx:for-item="item" wx:for-index="idx">
+    <view catchtap="onTapToDetail1" data-news-id="{{item.newsId}}">
+      <view wx:if="{{item.newsId%2!=0}}">
+        <template is="newsTpl1" data="{{...item}}"></template>
+      </view>
+      <view wx:else>
+        <template is="newsTpl2" data="{{...item}}"></template>
+      </view>
+    </view>
+  </block>
+
+</view>
+<w-back-top wx:if="{{showBackTop}}"/>

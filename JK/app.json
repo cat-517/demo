@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/news/news",
+    "pages/video/video",
+    "pages/news/disease/disease",
+    "pages/news/fun/fun",
+    "pages/news/sport/sport",
+    "pages/news/arms/arms",
+    "pages/news/news-comment/news-comment",
+    "pages/news-detail1/news-detail1",
+    "pages/news-detail2/news-detail2",
+    "pages/news-detail3/news-detail3",
+    "pages/news-detail4/news-detail4",
+    "pages/news-detail5/news-detail5",
+    "pages/news/fun/fun-comment/fun-comment",
+    "pages/news/arms/arms-comment/arms-comment",
+    "pages/news/disease/dis-comment/dis-comment",
+    "pages/news/sport/spo-comment/spo-comment",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "东方头条新闻",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "selectedColor": "#e63535",
+    "color": "black",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/news/news",
+        "text": "新闻",
+        "iconPath": "images/tabbar/news.png",
+        "selectedIconPath": "images/tabbar/newsed.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频",
+        "iconPath": "images/tabbar/video.png",
+        "selectedIconPath": "images/tabbar/videoed.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes":["audio","location"]
+}

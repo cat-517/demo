@@ -1,0 +1,25 @@
+<!--pages/video/video.wxml-->
+  <block wx:for="{{newsList}}" wx:for-item="item" wx:for-index="idx" wx:key="key">
+    <view wx:if="{{item.newsId%2!=0}}" class="video-all">
+      <text class="video-text">{{item.texttop}}</text>
+      <video src="{{item.src}}" binderror="listenerVideo"
+        loop="ture" show-mute-btn="true" enable-play-gesture="true" show-fullscreen-btn="{{false}}"></video>
+      <view class="video-middle">
+        <text class="video-text1">{{item.textlow}}</text>
+        <text class="video-text3">{{item.author}}</text>
+        <text>{{item.time1}}</text>
+      </view>
+    </view>
+    <view wx:else class="video-all">
+      <text class="video-text">{{item.texttop}}</text>
+      <video src="{{item.src}}" binderror="listenerVideo"
+        loop="ture" show-mute-btn="true" enable-play-gesture="true" show-fullscreen-btn="{{false}}"></video>
+      <view class="video-middle">
+        <text class="video-text2">{{item.textlow}}</text>
+        <text class="video-text3">{{item.author}}</text>
+        <text>{{item.time1}}</text>
+      </view>
+    </view>
+  </block>
+  <w-back-top wx:if="{{showBackTop}}"/>
+

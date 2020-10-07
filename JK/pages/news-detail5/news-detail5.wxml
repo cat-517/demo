@@ -1,0 +1,91 @@
+<!--pages/news-detail5/news-detail5.wxml-->
+<view class="new-detail1-all">
+  <view class="text-top">
+    <text class="text">{{news.title}}</text>
+  </view>
+  <view class="text-head">
+    <image src="{{news.avatar}}"></image>
+    <text class="text-head-text">{{news.title2}}</text>
+    <text>{{news.time}}</text>
+    <image class="music" src="{{isPlayingMusic?'/images/comment/zt.png':'/images/comment/bf.png'}}" catchtap="onMusicTap"></image>
+  </view>
+  <view class="text-middle">
+    <text>{{news.text}}</text>
+    <view class="text1" wx:if="{{!newx.text1}}">
+      <text>{{news.text1}}</text>
+    </view>
+    <view class="images1">
+      <image src="{{news.images1}}"></image>
+    </view>
+    <text>{{news.text2}}</text>
+    <view class="text1">
+      <text>{{news.text3}}</text>
+    </view>
+    <view class="images1">
+      <image src="{{news.images2}}"></image>
+    </view>
+    <text>{{news.text4}}</text>
+    <view class="text1">
+      <text>{{news.text5}}</text>
+    </view>
+    <view class="images1">
+      <image src="{{news.images3}}"></image>
+    </view>
+    <text>{{news.text6}}</text>
+    <view class="text1">
+      <text>{{news.text7}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="tool">
+  <view class="tool-item" catchtap="onLikeTap" data-news-id="{{news.newsId}}">
+    <image animation="{{animationUp}}" wx:if="{{news.likeStatus}}" src="{{images1}}"></image>
+    <image animation="{{animationUp}}" wx:else src="{{images4}}"></image>
+    <text>{{news.likeNum}}</text>
+  </view>
+  <view class="tool-item" catchtap="onCommentTap" data-news-id="{{news.newsId}}">
+    <image src="{{images2}}"></image>
+    <text>{{news.comments.length}}</text>
+  </view>
+  <view class="tool-item" catchtap="onCollectionTap" data-news-id="{{news.newsId}}">
+    <image animation="{{animationUp2}}" wx:if="{{news.collectionStatus}}" src="{{images3}}"></image>
+    <image animation="{{animationUp2}}" wx:else src="{{images5}}"></image>
+    <text>{{news.collectionNum}}</text>
+  </view>
+  <view class="tool-item">
+    <image src="{{images6}}"></image>
+    <text>{{news.readingNum}}</text>
+  </view>
+</view>
+
+<view class="detail-comment">{{comment}}</view>
+<block wx:for="{{comments}}" wx:for-item="item" wx:for-index="idx">
+      <view class="comment-item">
+        <view class="comment-item-header">
+          <view class="left-img">
+            <image src="{{item.avatar}}"></image>
+          </view>
+          <view class="right-user">
+            <text class="user-name">{{item.username}}</text>
+          </view>
+        </view>
+        <view class="comment-body">
+          <view class="comment-txt" wx:if="{{item.content.txt}}">
+            <text>{{item.content.txt}}</text>
+          </view>
+          <view class="comment-voice" wx:if="{{item.content.audio && item.content.audio.url}}">
+            <view data-url="{{item.content.audio.url}}" class="comment-voice-item" catchtap="playAudio">
+              <image src="/images/comment/voice.png" class="voice-play"></image>
+              <text>{{item.content.audio.timeLen}}</text>
+            </view>
+          </view>
+          <view class="comment-img" wx:if="{{item.content.img.length!=0}}">
+            <block wx:for="{{item.content.img}}" wx:for-item="img">
+              <image src="{{img}}" mode="aspectFill" catchtap="previewImg" data-comment-idx="{{idx}}" data-img-idx="img"></image>
+            </block>
+          </view>
+        </view>
+        <view class="comment-time">{{item.create_time}}</view>
+      </view>
+</block>

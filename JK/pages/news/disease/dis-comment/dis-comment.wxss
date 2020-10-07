@@ -1,0 +1,257 @@
+/* pages/news/disease/dis-comment/dis-comment.wxss */
+.comment-detail-box{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: hidden;
+}
+.comment-main-box{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 100rpx;  /*留白 评论*/
+  right: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling:touch;
+}
+.comment-item{
+  margin: 20rpx 12rpx 20rpx 12rpx;
+  padding: 24rpx 0 24rpx 0;
+  border-bottom: 1rpx solid #f2e7e1;
+}
+.comment-item:last-child{
+  border-bottom: none;
+}
+.comment-title{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color:#212121;
+  border-bottom: 1px solid #ccc;
+  margin-left: 12rpx;
+  margin-right: 12rpx;
+  padding: 8rpx 0;
+  font-family: Microsoft YaHei;
+}
+.comment-item-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.comment-item-header .left-img image{
+  height: 80rpx;
+  width: 80rpx;
+}
+.comment-item-header .right-user{
+  margin-left: 30rpx;
+  line-height: 80rpx;
+  width: 75%;
+}
+.comment-item-header .right-user text{
+  font-size: 26rpx;
+  color: #212121;
+}
+/*删除*/
+.comment-item-header .right-img image{
+  margin-top: 8rpx;
+  height: 45rpx;
+  width: 45rpx;
+}
+.comment-body{
+  font-size: 26rpx;
+  line-height: 26rpx;
+  color: #666;
+  padding: 10rpx 0;
+}
+.comment-txt text{
+  line-height: 50rpx;
+}
+.comment-img{
+  margin: 10rpx 0;
+}
+.comment-img image{
+  max-width: 32%;
+  margin-right: 10rpx;
+  height: 220rpx;
+  width: 220rpx;
+}
+.comment-voice-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 200rpx;
+  height: 64rpx;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 6rpx;
+}
+.comment-voice-item .voice-play{
+  height: 64rpx;
+  width: 64rpx;
+}
+.comment-voice-item text{
+  margin-left: 60rpx;
+  color: #212121;
+  font-size: 22rpx;
+}
+.comment-time{
+  margin-top: 10rpx;
+  color: #ccc;
+  font-size: 24rpx;
+}
+
+/*输入框*/
+.input-box{
+  position: absolute;  /*绝对定位*/
+  bottom: 0;
+  left:0;
+  right: 0;
+  background-color: #EAE8E8;
+  border-top:1rpx solid #D5D5D5;
+  min-height: 100rpx;  /*最小高度*/
+  z-index: 1000;  /*显示在评论最上方*/
+}
+.input-box .send-msg-box{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 20rpx 0;  /*内边距*/
+}
+.input-box .send-more-box{
+  margin: 20rpx 35rpx 35rpx 35rpx;
+}
+.input-box .input-item{
+  margin:0 5rpx;
+  flex:1;  
+  width: 0%;  /*宽度会随着父容器的变化而变化*/
+  position: relative;
+}
+.input-box .input-item .comment-icon{
+  position: absolute;
+  left:5rpx;
+  top:6rpx;
+}
+.input-box .input-item .input{
+  border: 1rpx solid #D5D5D5;
+  background-color: #fff;
+  border-radius: 3px;
+  line-height: 65rpx;
+  margin:5rpx 0 5rpx 75rpx ;
+  font-size: 24rpx;
+  color: #838383;
+  padding: 0 2%;
+}
+.input-box .input-item .keyboard-input{
+  width: auto;
+  max-height: 500rpx;
+  height: 65rpx;
+  word-break:break-all;  /*走到组件尽头，马上换行*/
+  overflow:auto;  /*放不下交给父容器处理溢出*/
+}
+.input-box .input-item .speak-input{
+  text-align: center;
+  color: #212121;
+  height: 65rpx;
+}
+.input-box .input-item .recoding{
+  background-color: #ccc;
+}
+.input-box .input-item .comment-icon.speak-icon{
+  height: 62rpx;
+  width: 62rpx;
+}
+.input-box .input-item .comment-icon.keyboard-icon{
+  height: 60rpx;
+  width: 60rpx;
+  left:6rpx;
+}
+.input-box .add-icon{
+  margin:0 5rpx;
+  height: 65rpx;
+  width: 65rpx;
+  transform: scale(0.9);  /*缩放*/
+  margin-top: 2px;
+}
+.input-box .submit-btn{
+  font-size: 24rpx;
+  margin-top: 5rpx;
+  margin-right: 8rpx;
+  line-height: 60rpx;
+  width: 120rpx;
+  height: 60rpx;
+  background-color: green;
+  border-radius:5rpx;
+  color: #fff;
+  text-align: center;
+  font-family:Microsoft Yahei;
+}
+
+/**/
+.send-more-box .more-btn-item{
+  display: inline-block;
+  width: 110rpx;
+  height: 145rpx;
+  margin-right: 35rpx;
+  text-align: center;
+}
+.more-btn-main{
+  width: 100%;
+  height:60rpx;
+  text-align: center;
+  border:1px solid #D5D5D5;
+  border-radius: 10rpx;
+  background-color: #fbfbfc;
+  margin: 0 auto;
+  padding:25rpx 0;
+}
+.more-btn-main image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.send-more-box .more-btn-item text{
+  color: #888888;
+  font-size: 24rpx;
+  margin:10rpx 0;
+}
+.send-more-result-main{
+  margin-top: 30rpx;
+}
+.send-more-result-main .file-box{
+  margin-right: 14rpx;
+  height: 160rpx;
+  width: 160rpx;
+  position: relative;
+  display: inline-block;
+}
+.send-more-result-main .file-box.deleting{
+  animation:deleting 0.5s ease;  /*动画效果，配合对象名称一起使用，ease表示动画变化的速度曲线*/
+  animation-fill-mode: forwards;  /*停止在最后一个关键帧*/
+}
+@keyframes deleting{
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(0);
+  }
+}
+.send-more-result-main image{
+  height: 100%;
+  width: 100%;
+}
+.send-more-result-main .remove-icon{
+  position: absolute;  /*绝对定位*/
+  right: 5rpx;
+  top: 5rpx;
+}
+.send-more-result-main .file-box .img-box{
+  height: 100%;
+  width: 100%;
+}
+
+/*表情*/
+.emoji{
+  margin-left: 20rpx;
+}
